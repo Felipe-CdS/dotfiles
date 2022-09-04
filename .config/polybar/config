@@ -127,14 +127,11 @@ label-mounted-underline = ${colors.menucol-yellow}
 
 [module/temperature]
 type = internal/temperature
-interval = 0.5
+thermal-zone = 2
 format = <label>
 label = %temperature-c%
 label-font = 0
 format-underline = ${colors.menucol-deepblue}
-
-
-
 
 ;======================== Exit Button ========================
 [module/powermenu]
@@ -146,6 +143,6 @@ content-padding = 1.5
 content-foreground = ${colors.menucol-red}
 content-underline = ${colors.menucol-red}
 
-click-left = shutdown -h now
+;click-left = shutdown -h now
 
 

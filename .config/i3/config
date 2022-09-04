@@ -191,8 +191,8 @@ set $outergap 10
 #on init
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id ~/Scripts/abnt2.sh #script for keyboard mode
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wallpaper5.jpg #Wallpaper
+exec_always --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2 #script for keyboard mode
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/SN1.png #Wallpaper
 
 # Do not follow the mouse
 focus_follows_mouse no
@@ -217,11 +217,11 @@ bindsym --release $mod+Shift+s exec "scrot -s ~/Pictures/%Y-%m-%d-%H-%M-%S.png"
 bindsym $mod+shift+F1 exec "i3-msg 'workspace 1;' && firefox"
 for_window [class="firefox"] move --no-auto-back-and-forth container to workspace $ws1
 
-bindsym $mod+shift+F2 exec "i3-msg 'workspace 10;' && ~/Scripts/Discord/Discord" 
+bindsym $mod+shift+F2 exec "i3-msg 'workspace 10;' && discord" 
 for_window [class="discord"] move --no-auto-back-and-forth container to workspace $ws10
 
 bindsym $mod+shift+F3 exec "i3-msg 'workspace 9;' && spotify" 
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws9
 
-bindsym $mod+shift+F4 exec "i3-msg 'workspace 9;' && notion-snap" 
+bindsym $mod+shift+F4 exec "i3-msg 'workspace 8;' && notion-snap" 
 for_window [class="notion-snap"] move --no-auto-back-and-forth container to workspace $ws8

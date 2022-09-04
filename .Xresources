@@ -1,61 +1,57 @@
+! *.font: xft:Droid Sans Mono:style=Regular:size=9
+! *.font: mononoki:style=Regular
+URxvt.font: xft:mononoki:style=Regular:size=10
 
-
-!!URxvt.font: -ark-boxxy-medium-r-normal--14-140-72-72-c-60-iso10646-1
-!!URxvt*font: xft:monaco:size=10
-*.font: xft:Droid Sans Mono:style=Regular:size=10
-
-!!*.font: xft:Iosevka:style=Regular:size=8
-!!*.boldFont: xft:Iosevka:style=Bold:size=8
-!!*.italicFont: xft:Iosevka:style=Italic:size=8
-!!*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=8
 URxvt.letterSpace: -1
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
 URxvt.internalBorder: 24
 URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
+URxvt.cursorUnderline: true
 URxvt.saveline: 2048
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-URxvt.transparent: true
-URxvt.shading: 20
+!!URxvt.transparent: true
+!!URxvt.shading: 20
 
 ! special
-*.foreground:   #c2cfce
-*.background:   #0d0f0e
-*.cursorColor:  #c2cfce
+*.foreground:   #ffffff
+*.background:   #161616
+*.cursorColor:  #ffffff
 
 ! black
-*.color0:       #161818
-*.color8:       #7bca82
+*.color0:       #222222
+*.color8:       #666666
 
 ! red
-*.color1:       #1e2121
-*.color9:       #6ebebc
+*.color1:       #e84f4f
+*.color9:       #d23d3d
 
 ! green
-*.color2:       #2e3232
-*.color10:      #74a4a2
+*.color2:       #b7ce42
+*.color10:      #bde077
 
 ! yellow
-*.color3:       #454a4a
-*.color11:      #86aae4
+*.color3:       #fea63c
+*.color11:      #ffe863
 
 ! blue
-*.color4:       #616868
-*.color12:      #df8d90
+*.color4:       #66aabb
+*.color12:      #aaccbb
 
 ! magenta
-*.color5:       #838c8c
-*.color13:      #ea8b8f
+*.color5:       #b7416e
+*.color13:      #e16a98
 
 ! cyan
-*.color6:       #aab6b5
-*.color14:      #ac9a5f
+*.color6:       #6d878d
+*.color14:      #42717b
 
 ! white
-*.color7:       #d7e5e5
-*.color15:      #d8c06e
+*.color7:       #dddddd
+*.color15:      #cccccc
+
+
