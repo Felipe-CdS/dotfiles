@@ -12,3 +12,4 @@ export LANG=en_US.UTF-8
 alias xresourcesreload='xrdb -merge ~/.Xresources'
 alias i3-config-edit='vim ~/.config/i3/config'
 export PATH="$PATH:$HOME/.local/bin"
+. "$HOME/.cargo/env"

@@ -1,6 +1,6 @@
 ! *.font: xft:Droid Sans Mono:style=Regular:size=9
 ! *.font: mononoki:style=Regular
-URxvt.font: xft:mononoki:style=Regular:size=10
+URxvt.font: xft:mononoki:style=Regular:size=13
 
 URxvt.letterSpace: -1
 URxvt.lineSpace: 0
@@ -14,44 +14,80 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-!!URxvt.transparent: true
-!!URxvt.shading: 20
 
 ! special
-*.foreground:   #ffffff
-*.background:   #161616
-*.cursorColor:  #ffffff
+*.foreground:   #e0def4
+*.background:   #191724
+*.cursorColor:  #e0def4
 
 ! black
-*.color0:       #222222
-*.color8:       #666666
+*.color0:       #1f1d2e
+*.color8:       #26233a
 
 ! red
-*.color1:       #e84f4f
-*.color9:       #d23d3d
+*.color1:       #eb6f92
+*.color9:       #eb6f92
 
 ! green
-*.color2:       #b7ce42
-*.color10:      #bde077
+*.color2:       #f6c177
+*.color10:      #f6c177
 
 ! yellow
-*.color3:       #fea63c
-*.color11:      #ffe863
+*.color3:       #ebbcba
+*.color11:      #ebbcba
 
 ! blue
-*.color4:       #66aabb
-*.color12:      #aaccbb
+*.color4:       #31748f
+*.color12:      #31748f
 
 ! magenta
-*.color5:       #b7416e
-*.color13:      #e16a98
+*.color5:       #c4a7e7
+*.color13:      #c4a7e7
 
 ! cyan
-*.color6:       #6d878d
-*.color14:      #42717b
+*.color6:       #9ccfd8
+*.color14:      #9ccfd8
 
 ! white
-*.color7:       #dddddd
-*.color15:      #cccccc
+*.color7:       #6e6a86
+*.color15:      #908caa
 
+URxvt.transparent: true
+URxvt.shading: 13
 
+! special
+!*.foreground:   #ffffff
+!*.background:   #161616
+!*.cursorColor:  #ffffff
+!
+!! black
+!*.color0:       #222222
+!*.color8:       #666666
+!
+!! red
+!*.color1:       #e84f4f
+!*.color9:       #d23d3d
+!
+!! green
+!*.color2:       #b7ce42
+!*.color10:      #bde077
+!
+!! yellow
+!*.color3:       #fea63c
+!*.color11:      #ffe863
+!
+!! blue
+!*.color4:       #66aabb
+!*.color12:      #aaccbb
+!
+!! magenta
+!*.color5:       #b7416e
+!*.color13:      #e16a98
+!
+!! cyan
+!*.color6:       #6d878d
+!*.color14:      #42717b
+!
+!! white
+!*.color7:       #dddddd
+!*.color15:      #cccccc

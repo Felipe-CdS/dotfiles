@@ -185,14 +185,14 @@ bindsym $mod+r mode "resize"
 ###################################################
 ## My configs
 
-set $innergap 10
-set $outergap 10
+set $innergap 5
+set $outergap 5
 
 #on init
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2 #script for keyboard mode
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/SN1.png #Wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper21.jpg #Wallpaper
+exec_always --no-startup-id fcitx5 -d
 
 # Do not follow the mouse
 focus_follows_mouse no
@@ -204,11 +204,11 @@ for_window [window_role="GtkFileChooserDialog"] floating disable
 
 # Window no border
 new_window pixel 0
-default_border pixel 0
+default_border pixel 1 
 
 #Setup gaps
-gaps inner $innergap
-gaps outer $outergap
+# gaps inner $innergap
+# gaps outer $outergap
 
 #Print button
 bindsym --release $mod+Shift+s exec "scrot -s ~/Pictures/%Y-%m-%d-%H-%M-%S.png"
