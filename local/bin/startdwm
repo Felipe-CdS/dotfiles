@@ -1,0 +1,8 @@
+#!/bin/sh
+
+feh --bg-fill ~/Pictures/Wallpapers/wallpaper24.jpg &
+picom &
+fcitx -d &
+while true; do
+    dwm 2> ~/.dwm.log
+done

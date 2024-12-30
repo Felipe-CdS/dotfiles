@@ -1,0 +1,29 @@
+[general]
+import = ["~/.config/alacritty/themes/lovecraft.toml"]
+# import = ["~/.config/alacritty/themes/seashells.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "mononoki", style = "Regular" }
+size = 13
+
+# Other Options:
+#	Default = { family = "monospace", style = "Regular" }
+#	Alacrity default 11.25
+#	Monospace > Size 12
+#	Mononoki  > Size 13
+
+[window]
+padding = { x = 0, y = 0 }
+opacity = 0.95
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+{ key = "V", mods = "Control|Alt", action = "Paste" },
+{ key = "C", mods = "Control|Alt", action = "Copy" },
+]

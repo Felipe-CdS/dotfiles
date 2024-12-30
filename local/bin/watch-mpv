@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+PREV_STATUS="$(xprop -root -notype -f WM_NAME "8u" | sed -n -r 's/WM_NAME = \"(.*)\"/\1/p')"
+CLIPBOARD="$(xclip -o -selection clipboard)"
+
+if [[ "$1" = "--no-video" ]]
+then
+	xsetroot -name "Playing Audio... | $(date)"
+	mpv --no-video $CLIPBOARD
+else
+	xsetroot -name "Playing Video... | $(date)"
+	mpv $CLIPBOARD
+fi
+
+if [[ $? -ne 0 ]]
+then
+	xsetroot -name "Failed to play video | $(date)"
+	sleep 10
+	xsetroot -name "$(date)"
+else
+	xsetroot -name "$(date)"
+fi
+

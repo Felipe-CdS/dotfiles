@@ -1,0 +1,161 @@
+;========================== Main ==========================
+[global/wm]
+margin-top    = 0
+margin-bottom = -18
+include-file = $HOME/.config/polybar/colors.ini
+include-file = $HOME/.config/polybar/fonts.ini
+
+[bar/mainbar]
+enable-ipc = true
+override-redirect = false
+
+bottom          = false
+width           = 100%
+height          = 30
+fixed-center    = true
+radius          = 0
+border-color = ${colors.transparent}
+padding         = 2
+
+border-left = 0
+border-right = 0
+border-top = 0
+border-bottom = 0
+
+separator = " | "
+
+background = ${colors.dark}
+foreground = ${colors.light}
+line-color = ${colors.light-purple}
+line-size = 2
+
+font-0 = ${fonts.droid-sans}
+font-1 = ${fonts.nerd}
+
+wm-restack = i3
+
+modules-left    = workspaces
+modules-center  = spotify
+modules-right   = worktimer filesystem
+
+;modules-right   = filesystem temperature date powermenu
+
+;========================== Workspaces ==========================
+[module/workspaces]
+type = internal/i3
+format = <label-state> <label-mode>
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = false
+enable-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;謹
+ws-icon-2 = 3;
+ws-icon-3 = 4;卑
+ws-icon-4 = 5;卑
+ws-icon-5 = 6;卑
+ws-icon-6 = 7;卑
+ws-icon-7 = 8;ﴬ
+ws-icon-8 = 9;
+ws-icon-9 = 10;ﭮ
+
+ws-icon-default = 卑
+
+;On editing mode (resize for ex)
+label-mode = %mode%
+label-mode-background = ${colors.dark-purple}
+label-mode-underline = ${colors.fav-purple}
+label-mode-padding = 2
+label-mode-font = 1
+
+label-focused = %icon%
+label-focused-background = ${colors.dark-green}
+label-focused-underline = ${colors.light-green}
+label-focused-padding = 2
+label-focused-font = 1
+
+label-unfocused = %icon%
+label-unfocused-foreground = ${colors.gray}
+label-unfocused-padding = 2
+label-unfocused-font = 1
+
+label-visible = %icon%
+label-visible-background = ${colors.dark-purple}
+label-visible-underline = ${colors.light-purple}
+label-visible-padding = 2
+label-visible-font = 1
+
+label-urgent = %icon%
+label-urgent-background = ${colors.dark-red}
+label-urgent-underline = ${colors.light-red}
+label-urgent-padding = 2
+label-urgent-font = 1
+
+;========================== Date ==========================
+[module/date]
+type = internal/date
+
+time = "%I:%M %p"
+date = "%Y-%m-%d"
+
+label = "%date%, %time%"
+label-font = 0
+label-foreground = ${colors.light}
+
+format-underline = ${colors.menucol-orange}
+
+interval = 20
+
+;========================== Music ==========================
+[module/spotify]
+type = custom/script
+interval = 1
+format = "<label>"
+##### Spotify-status repository https://github.com/Jvanrhijn/polybar-spotify
+exec = python /home/nugu/.config/polybar/polybar-spotify/spotify_status.py -f '{artist}: {song}'
+format-underline = ${colors.light-green}
+
+;====================== WorkTimerStatus =======================
+[module/worktimer]
+type = custom/script
+format = <label>
+
+exec = bash /home/nugu/.config/polybar/worktimer-client/client.sh
+click-left = bash /home/nugu/.config/polybar/worktimer-client/client.sh -s
+
+cursor-click = pointer
+format-underline = ${colors.light-green}
+
+;========================== Storage ==========================
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+label-mounted = Disk: %percentage_used%%
+label-mounted-underline = ${colors.menucol-yellow}
+
+;========================== Temperature ==========================
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 2
+format = <label>
+label = %temperature-c%
+label-font = 0
+format-underline = ${colors.menucol-deepblue}
+
+;======================== Exit Button ========================
+[module/powermenu]
+type = custom/text
+
+content = ⏻
+content-font = 1
+content-padding = 1.5
+content-foreground = ${colors.menucol-red}
+content-underline = ${colors.menucol-red}
+
+;click-left = shutdown -h now
+
+

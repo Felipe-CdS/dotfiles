@@ -1,0 +1,33 @@
+export LANG=en_US.UTF-8
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:$HOME/.rbenv/bin"
+
+eval "$(rbenv init -)"
+
+#Use vim as editor
+export EDITOR=nvim
+
+#Use vim key bindings in zsh
+bindkey -v
+
+autoload -Uz promptinit
+promptinit
+
+prompt_test_setup() {
+    PS1="%F{green}[%m@%n]:%~ > %f"
+}
+
+prompt_themes+=( test )
+prompt test
+
+bindkey -s ^f "tmux-sessionizer \n"
+
+# Aliases
+alias ls='ls --color=auto'
+alias xresourcesreload='xrdb -merge ~/.Xresources'
+alias i3-config-edit='nvim ~/.config/i3/config'
+alias dwm-config-edit='nvim ~/.local/share/dwm/config.h'
+alias alacritty-config-edit='nvim ~/.config/alacritty/alacritty.toml'
