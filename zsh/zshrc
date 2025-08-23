@@ -4,8 +4,15 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.rbenv/shims"
 export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.2.0/bin"
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PATH:$PYENV_ROOT/bin"
+# export PATH="$PATH:$PYENV_ROOT/versions/3.7.17/bin"
 
 eval "$(rbenv init -)"
+eval "$(ssh-agent -s)" > /dev/null
+# eval "$(pyenv init -)"
 
 #Use vim as editor
 export EDITOR=nvim
@@ -13,11 +20,23 @@ export EDITOR=nvim
 #Use vim key bindings in zsh
 bindkey -v
 
+# Prompt config
+# Use vcs_info to help set a git prompt
+autoload -Uz vcs_info
 autoload -Uz promptinit
 promptinit
 
+precmd(){ vcs_info }
+setopt PROMPT_SUBST
+
+# This generates a fancy coloured string with $vcs:($branch)
+# zstyle ':vcs_info:*' formats '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f '
+# This removes the 'git:' part. I just want the '(branch)'
+zstyle ':vcs_info:*' formats '%F{2}(%F{1}%b%F{2})%f' 
+
+# %F{2} > color green
 prompt_test_setup() {
-    PS1="%F{green}[%m@%n]:%~ > %f"
+    PS1='%F{2}[%m@%n]:%~ ${vcs_info_msg_0_} %F{2}> %f'
 }
 
 prompt_themes+=( test )
@@ -31,3 +50,5 @@ alias xresourcesreload='xrdb -merge ~/.Xresources'
 alias i3-config-edit='nvim ~/.config/i3/config'
 alias dwm-config-edit='nvim ~/.local/share/dwm/config.h'
 alias alacritty-config-edit='nvim ~/.config/alacritty/alacritty.toml'
+alias ssh-hexweavers='ssh-add ~/.ssh/hexweavers'
+alias ssh-personal='ssh-add ~/.ssh/id_rsa'

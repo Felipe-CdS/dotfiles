@@ -107,17 +107,23 @@ return require('packer').startup(
 				c.setup({
 					formatters_by_ft = {
 						lua = { "stylua" },
-						javascript = { { "prettierd", "prettier" } },
 						go = { "gofmt" },
-					},
-					format_on_save = {
-						timeout_ms = 500,
-						lsp_format = "fallback",
+						javascript = { "prettier" },
+						javascriptreact = { "prettier" },
+						typescript = { "prettier" },
+						typescriptreact = { "prettier" },
 					},
 				})
+			end
+		}
 
-				vim.keymap.set('n', '<leader>f',
-					function() c.format({ async = true, lsp_fallback = true }) end)
+
+		use {
+			'alohaia/fcitx.nvim',
+			config = function()
+				require 'fcitx' {
+					-- options
+				}
 			end
 		}
 	end

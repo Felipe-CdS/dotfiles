@@ -2,7 +2,7 @@
 
 feh --bg-fill ~/Pictures/Wallpapers/wallpaper24.jpg &
 picom &
-fcitx -d &
+fcitx5 -d &
 while true; do
     dwm 2> ~/.dwm.log
 done
