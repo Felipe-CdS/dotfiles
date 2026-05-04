@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+tmux new-window -n DockerDashboard
+
+tmux split-window -d		# 1) Create a deattached window below without changing focus
+
+tmux split-window -dh		# 2) Create a deattached window to the side without changing focus
+tmux select-pane -D		# 3) Change to the window created on step 1 that should be Down
+tmux split-window -h		# 4) Now with the window on the bottom focused, split it vertically
+
+tmux select-pane -UL
+tmux send-keys -t DockerDashboard "docker logs -f templ-container" C-m
+tmux select-pane -R
+tmux send-keys -t DockerDashboard 'docker stats --format "table {{.ID}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}"' C-m
+tmux select-pane -D
+tmux send-keys -t DockerDashboard "docker logs -f tailwind-container" C-m
+tmux select-pane -L
+tmux send-keys -t DockerDashboard "docker logs -f basement-container" C-m
+
